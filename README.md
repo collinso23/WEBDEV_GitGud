@@ -50,6 +50,10 @@ https://code.visualstudio.com/docs/?dv=win
 https://desktop.github.com/
 https://www.docker.com/products/docker-desktop
 
+**Useful Django Info**
+
+When making changes to the db use `manage.py migrate` to apply changes.
+
 
 **Useful docker commands**
 

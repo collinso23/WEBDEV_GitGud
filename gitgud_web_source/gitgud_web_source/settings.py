@@ -26,10 +26,11 @@ SECRET_KEY = '^1c$=cxsv^rxryob3m)k%idc5tjnq&iv7@0-k*yp%9t$k8n*&)'
 DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
-
+#ADMINS = [("admin","webdev")]
 # Application definition
 
 INSTALLED_APPS = [
+    'tools.apps.ToolsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -71,15 +72,11 @@ WSGI_APPLICATION = 'gitgud_web_source.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+# Will implement mysql db here, currently using basic sqlite db for user storage. 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'db',   
-        'PORT': 5432,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
