@@ -1,4 +1,4 @@
-Friday, April 2, 2021 8:27:59 PM
+**Friday, April 2, 2021 8:27:59 PM**
 
 Commented out Postgres info from `docker-compose.yaml` we are implementing mysql as the DB
 For the time being I also enabled sqlite (django default db) by changing `gitgud_web_source/gitgud_web_source/settings.py`. So that a superuser could be created and the admin page accessed.
@@ -13,4 +13,8 @@ DATABASES = {
 Started the index.html for tools page. 
 Got index to load subprocess but its currently not returning stdout only error code 1.
 TODO: Figure out how to get stdout of subprocess on webpage.
+
+**Sat Apr  3 02:05:12 EDT 2021**
+
+Created new pages to test dig and ping `localhost:8000/tools/pingpage` or `/tools/digpage`. Stdout is still not working, but runTool should be the primary method of invoking shell commands. It takes in two arguments. The tool to run, and the parameters (ie. `runTool("ping","-c4 -q www.google.com")`, or `runTool("dig","www.google.com")`). Eventually these arguments will be captured by the html form on the website, but for now they are hard coded. 
 

@@ -7,4 +7,6 @@ dst = "www.google.com"
 #argTool(command)
 #print()
 #argTool(sys.argv)
-print(inv.pingTool(dst))
+print(inv.runTool("ping","-c4 -q www.google.com"))
+
+print(inv.runTool("dig","www.google.com"))
