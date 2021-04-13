@@ -1,7 +1,33 @@
 version: "3.9"
 
 services:
-  #Uncommented Postgres info we are implementing mysql as the DB
+  #DB goes here
+  
+  #db:
+  #  image: beauchainea/alpinedbv2:firstdb
+  #  ports: 
+  #    - '3307:3306'
+  #  #command: --default-authentication-plugin=mysql_native_password
+  #  #restart: always
+  #  environment:
+  #    MYSQL_DATABASE: 'DB_Gudweb'
+  #    MYSQL_USER: 'userDB'
+  #    MYSQL_PASSWORD: 'PasswordDB'
+  #    MYSQL_ROOT_PASSWORD: 'SuperDuperPassword@!@!'
+  #  volumes: 
+  #    - .:/gud_db
+    
+  gudweb:
+    build: ./gitgud_web_source/
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    #depends_on: 
+    #  - db
+
+  #Commented out Postgres info we are implementing mysql as the DB
   #For the time being I also enabled sqlite (django default db)
   # So that a superuser could be created and the admin page accessed.
   #db:
@@ -10,12 +36,4 @@ services:
   #    - POSTGRES_DB=postgres
   #    - POSTGRES_USER=postgres
   #    - POSTGRES_PASSWORD=postgres
-  gudweb:
-    build: ./gitgud_web_source/
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/code
-    ports:
-      - "8000:8000"
-   # depends_on: 
-   #   - db
+
