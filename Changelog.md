@@ -18,3 +18,9 @@ TODO: Figure out how to get stdout of subprocess on webpage.
 
 Created new pages to test dig and ping `localhost:8000/tools/pingpage` or `/tools/digpage`. Stdout is still not working, but runTool should be the primary method of invoking shell commands. It takes in two arguments. The tool to run, and the parameters (ie. `runTool("ping","-c4 -q www.google.com")`, or `runTool("dig","www.google.com")`). Eventually these arguments will be captured by the html form on the website, but for now they are hard coded. 
 
+**Tuesday, April 13, 2021 11:46:50 AM**
+Re-strucutured the dockerfile so that tools were getting coppied into the src for the web app. The test pages, `tools/testdig`, `tools/testmtr`, and `tools/testping` are working. Got the DB image running. Next we need to implement the DB into the django app. 
+
+The DB is running, but keep crashing on start, and is not accepting connections.
+
+added mount of source code into `/development` on the gudweb container so rebuild is not necessary to test changes

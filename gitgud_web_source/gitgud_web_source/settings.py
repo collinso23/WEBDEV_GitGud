@@ -73,26 +73,26 @@ WSGI_APPLICATION = 'gitgud_web_source.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 # Will implement mysql db here, currently using basic sqlite db for user storage. 
-"""DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'DB_Gudweb',
-        'HOST': '127.0.0.1',
-        'USER': 'userDB',
-        'PASSWORD': 'PasswordDB',
+        'NAME': 'gud_backend',
+        'USER': 'DBuser',
+        'PASSWORD': 'SuperSecrets213',
         'PORT': '3306',
-        'HOST': 'db',
+        'HOST': 'guddb',
     }
-}"""
+}
 
 
 #Old Config - Working, but uses default DB from Django
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+"""
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 

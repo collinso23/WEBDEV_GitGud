@@ -52,8 +52,17 @@ https://www.docker.com/products/docker-desktop
 
 **Useful Django Info**
 
+Admin ['USER: Admin', 'PASS: webdev']
+
 When making changes to the db use `manage.py migrate` to apply changes.
 
+**Useful DB Info**
+
+Admin ['USER: root','PASS: Password1']
+
+The DB can be checked using `docker-compose run db rc-status`
+
+If the DB is hung it can be restarted with `rc-service mariadb stop && rc-service mariadb start`
 
 **Useful docker commands**
 
@@ -121,7 +130,8 @@ https://www.freecodecamp.org/news/how-to-build-a-web-application-using-flask-and
 
 Dockerfile - Contains instructions for creating docker container
 
-sh_with_pie.py - Python program to test python's subprocess module in the container
+invokeBashProcess.py - Python program to run python's subprocess module in the containers webapp
 
 Guide to create the docker compose image.
 https://docs.docker.com/compose/django/
+
