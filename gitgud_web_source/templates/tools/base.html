@@ -6,8 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gud Dashboard {% block title %}
-    {% endblock %}</title> 
+    <title>Gud Dashboard {% block title %}{% endblock %}</title> 
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
@@ -36,7 +35,7 @@
   <div class="row">
     {% include 'partials/_sidebar.html' %}
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      {% block content%}
+      {% block content %}
 
 
       {% endblock %}

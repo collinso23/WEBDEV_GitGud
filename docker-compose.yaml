@@ -39,8 +39,8 @@ services:
       - "8000:8000"
     links:
       - guddb
-    depends_on:
-      - guddb
+    #depends_on:
+    #  - guddb
    # networks: bridge
 
 
