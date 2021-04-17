@@ -4,7 +4,7 @@ from . import invokeBashProcess as invoke
 # Create your views here.
 
 def index(request):
-    return HttpResponse(f"Hello, world. You're at the tools page index.")
+    return HttpResponse("Welcome to tools page")#render(request, 'gitgud_web_source/index.html')
 
 def ping(request):
     output = invoke.runTool("ping","-c4 -q www.google.com")

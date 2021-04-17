@@ -27,8 +27,8 @@ services:
         #test: 
         #timeout: 20s
         #retries: 10
-    volumes: 
-      - .:/gud_db
+    #volumes: 
+    #  - .:/gud_db
   
   gudweb:
     build: ./gitgud_web_source/
