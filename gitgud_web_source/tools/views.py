@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from . import invokeBashProcess as invoke
+from .forms import ToolForm, NameForm
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
@@ -16,17 +17,17 @@ def network_tools(request):
 
 def test_form(request):
     if request.method == 'POST':
-        form = NameForm(request.POST)
+        form = ToolForm(request.POST)
         if form.is_valid():
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            return HttpResponseRedirect('/thanks/')
+            return HttpResponseRedirect('testdig/')
 
     else:
-        form = NameForm()
+        form = ToolForm()
 
-    return render(request, 'tools/nettools.html', {'form': form})
+    return render(request, 'tools/test_form.html', {'form': form})
 
 def testping(request):
     output = invoke.runTool("ping","www.google.com")

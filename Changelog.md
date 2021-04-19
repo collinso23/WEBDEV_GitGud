@@ -34,3 +34,6 @@ Implemented the static files for the website. Got the static content to be serve
 The website is using conflicting styles, id like to move everything over from the multiple pages into a more dynamic single page. 
 
 Create a test view in templates called `test_form`. It will take in options and print them out, which is similar words
+
+**Mon Apr 19 17:54:24 UTC 2021**
+Created the forms.py, and started implementing a test form without the extra css  in `templates/test_form`. I think we can use request.POST to get the data and select the required forms based off their label. 
