@@ -1,21 +1,22 @@
-<html>
+{% load static %}
 
+<html>
 <head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
- <link rel="stylesheet" type="text/css" href="login.css">
+ <link rel="stylesheet" type="text/css" href="{% static css/login.css %}">
 </head>
 
 <body>
     <nav>
         <div class="nav-wrapper ">
-          {% include 'partials/_sidebar.html'%}
+          {% include 'partials/_sidebar.html' %}
         </div>
       </nav>
   <div class="section"></div>
   <main>
     <center>
-      <img style="width: 250px;" src="gitgudlogo.jpg" />
+      <img style="width: 250px;" src="{% static img/gitgudlogo.jpg %}" />
       <div class="section"></div>
 
       <h4 style="color:#acbffc">Log In</h4>
@@ -44,7 +45,7 @@
               </div>
             </div>
 
-            <br />
+            <br/>
             <center>
               <div class='row'>
                 <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect blue lighten-4'>Login</button>

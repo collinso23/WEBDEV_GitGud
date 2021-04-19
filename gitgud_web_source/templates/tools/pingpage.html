@@ -1,5 +1,6 @@
-{%%}
+{% extends 'tools/base.html' %}
 {% load static %}
+{% block content %}
 <html lang="en">
 <head> 
     <meta charset="UTF-8">
@@ -10,29 +11,20 @@
     <link rel="stylesheet" href={% static 'css/tools.css' %}> 
 </head>
 <body>
-    <div class="row">
-       {% include 'partials/_sidebar.html' %}
-    </div>
- <div class="container left">
-  
-      <div class="row">
-        <div class="col ">
-          <a class='dropdown-trigger btn blue'  
-            href='#' 
-            data-target='dropdown1'>
-            Tools
-          </a>
-          <ul id='dropdown1' 
-            class='dropdown-content'>
+ <div class="container center">
+        <div class="col-md-6">
+          <form>  {% csrf_token %}
+            <div class="col s6"> 
+            <a class='dropdown-trigger input-field btn blue' href='#' data-target='dropdown1'>
+            Tools</a>
+              <ul id='dropdown1' class='dropdown-content'>
               <li><a href="#!" class="blue-text">Ping</a></li>
               <li><a href="#!" class="blue-text">Dig</a></li>
+              <li> <a href="#!" class="blue-test">Whois</li>
               <li class="divider" tabindex="-1"></li>
           </ul>
-        </div>
-
-        <div class="col s6">
-          <form>
-            <div class="input-field col s6">
+            </div>
+              <div class="input-field col s6">
               <input placeholder="IP Address"  type="text" class="validate">
               <label for="ip_address">IP Address</label>
             </div>
@@ -49,4 +41,6 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
       <script src="{% static 'js/dropdown.js' %}"></script>
 </body>
+
 </html>
+{% endblock %}
