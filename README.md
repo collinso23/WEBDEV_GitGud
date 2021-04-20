@@ -83,7 +83,7 @@ PS ..\GitHub\WEBDEV_GitGud>
 
 `docker-compose run $service_name $command_to_run` <- executes a command on the container, good for troubleshooting
 ```
-PS ..\GitHub\WEBDEV_GitGud> docker-compose.exe run gudweb bash
+PS ..\GitHub\WEBDEV_GitGud> docker-compose.exe run -p 8080:8000 gudweb bash
 Starting webdev_gitgud_db_1 ... done
 Creating webdev_gitgud_gudweb_run ... done
 root@5f60ad1b724c:/src# ls
