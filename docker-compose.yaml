@@ -1,34 +1,20 @@
 version: "3.9"
-#networks:
-#  bridge:
-#   driver: bridge
-
 services:
   #DB goes here
   guddb:
     image: mariadb
     ports: 
       - '3306:3306'
-    #command: sh -c "/sbin/openrc --service mariadb restart && 
-    #                /bin/rc-status &&
-    #                /usr/bin/mysql --user=root --password=Password1 --execute \"SHOW DATABASES;\""
+    #command: sh -c "/usr/bin/mysql --user=DBuser --password=SuperSecrets213 --execute \"SHOW DATABASES;\""
     restart: always
-    #deploy:
-    #  restart_policy:
-    #    condition: on-failure 
-    #    max_attempts: 3
+
     environment:
       MYSQL_DATABASE: 'gud_backend'
       MYSQL_USER: 'DBuser'
       MYSQL_PASSWORD: 'SuperSecrets213'
       MYSQL_ROOT_PASSWORD: 'YoullNeverGuess'
-   # networks: bridge
-      #healthcheck:
-        #test: 
-        #timeout: 20s
-        #retries: 10
     #volumes: 
-    #  - .:/gud_db
+    #  - .DB_Config:/gud_db
   
   gudweb:
     build: ./gitgud_web_source/
@@ -39,19 +25,5 @@ services:
       - "8000:8000"
     links:
       - guddb
-    #depends_on:
-    #  - guddb
-   # networks: bridge
-
-
-
-  #Commented out Postgres info we are implementing mysql as the DB
-  #For the time being I also enabled sqlite (django default db)
-  # So that a superuser could be created and the admin page accessed.
-  #db:
-  #  image: postgres
-  #  environment: 
-  #    - POSTGRES_DB=postgres
-  #    - POSTGRES_USER=postgres
-  #    - POSTGRES_PASSWORD=postgres
-
+    depends_on:
+      - guddb

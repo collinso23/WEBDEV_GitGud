@@ -1,0 +1,3 @@
+CREATE DATABASE WebDevDB;
+USE WebDevDB;
+CREATE TABLE user (name VARCHAR(20), password VARCHAR(20));
