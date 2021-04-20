@@ -25,3 +25,11 @@ Re-strucutured the dockerfile so that tools were getting coppied into the src fo
 The DB is running, but keep crashing on start, and is not accepting connections.
 
 added mount of source code into `/development` on the gudweb container so rebuild is not necessary to test changes
+
+
+**Saturday, April 17, 2021 4:32:34 PM**
+
+Implemented the static files for the website. Got the static content to be served following the tutorial here  https://www.youtube.com/watch?v=c3GFUpRx8pw.
+
+The website is using conflicting styles, id like to move everything over from the multiple pages into a more dynamic single page. 
+

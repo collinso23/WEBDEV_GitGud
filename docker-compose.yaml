@@ -9,6 +9,8 @@ services:
     image: mariadb
     ports: 
       - '3306:3306'
+    volumes:
+    - ./DB_Config:/docker-entrypoint-initdb.d
     #command: sh -c "/sbin/openrc --service mariadb restart && 
     #                /bin/rc-status &&
     #                /usr/bin/mysql --user=root --password=Password1 --execute \"SHOW DATABASES;\""
@@ -27,8 +29,8 @@ services:
         #test: 
         #timeout: 20s
         #retries: 10
-    volumes: 
-      - .:/gud_db
+    #volumes: 
+    #  - .:/gud_db
   
   gudweb:
     build: ./gitgud_web_source/
@@ -39,8 +41,8 @@ services:
       - "8000:8000"
     links:
       - guddb
-    depends_on:
-      - guddb
+    #depends_on:
+    #  - guddb
    # networks: bridge
 
 
