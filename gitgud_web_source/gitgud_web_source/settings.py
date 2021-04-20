@@ -55,7 +55,7 @@ ROOT_URLCONF = 'gitgud_web_source.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], #Add templates path to views
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'gitgud_web_source.wsgi.application'
 """DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gud_backend',
+        'NAME': 'WebDevDB',
         'USER': 'DBuser',
         'PASSWORD': 'SuperSecrets213',
         'PORT': '3306',

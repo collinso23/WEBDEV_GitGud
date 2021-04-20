@@ -9,7 +9,7 @@ services:
     restart: always
 
     environment:
-      MYSQL_DATABASE: 'gud_backend'
+      MYSQL_DATABASE: 'WebDevDB'
       MYSQL_USER: 'DBuser'
       MYSQL_PASSWORD: 'SuperSecrets213'
       MYSQL_ROOT_PASSWORD: 'YoullNeverGuess'

@@ -2,3 +2,7 @@ Include/
 Lib/
 Scripts/
 pyvenv.cfg
+share/
+__pycache__/
+HTML_Temp_home/
+bin/
